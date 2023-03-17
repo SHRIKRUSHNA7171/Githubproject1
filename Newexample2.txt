@@ -1,0 +1,24 @@
+package project;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class Project1 {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter a string: ");
+        String input = sc.nextLine();
+        sc.close();
+
+        Map<Character, Integer> charCounts = new HashMap<>();
+
+        for (char c : input.toCharArray()) {
+            if (charCounts.containsKey(c)) {
+                charCounts.put(c, charCounts.get(c) + 1);
+            } else {
+                charCounts.put(c, 1);
+            }
+        }
